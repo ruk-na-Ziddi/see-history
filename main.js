@@ -1,7 +1,5 @@
-// Refered to google's documetation.
+// Refered to google's documetation to see how to read history.
 function onSearchClick(){
-  clearResult('history_container');
-
   var latestHistoryItems = [];
   var entered_text = document.getElementById("user_input").value;
 
@@ -23,25 +21,15 @@ function onSearchClick(){
 
 }
 
-function clearResult(divId){
-  var container = document.getElementById(divId);
-  container.innerHTML = '';
-}
-
 function showLastSearches(divId, historyItems){
   var container = document.getElementById(divId);
+  var htmlString = '';
 
   for(var itemIndex = 0; itemIndex < historyItems.length; itemIndex++){
-    var link = document.createElement('a');
-    link.href = historyItems[itemIndex].url;
-    link.innerHTML = historyItems[itemIndex].title;
-    link.setAttribute('target', '_blank');
-
-    var para = document.createElement('p');
-    para.appendChild(link)
-
-    container.appendChild(para);
+    htmlString += "<p><a href=" + historyItems[itemIndex].url + " target=\"_blank\">"+ historyItems[itemIndex].title +"</a></p>"
   }
+
+  container.innerHTML = htmlString;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
