@@ -1,0 +1,17 @@
+{
+  "name": "URL history",
+  "version": "1.0",
+  "description": "This extenstion will read your chrome history and will show you last 5 history of a specific search if it is still in your chrome history",
+  "permissions": [
+    "history",
+    "tabs",
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "contextMenus"    
+  ],
+  "browser_action": {
+    "default_popup": "main.html",
+    "default_icon": "main.png"
+  },
+  "manifest_version": 2
+}
